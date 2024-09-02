@@ -12,7 +12,7 @@ end
 function updateAccepter1(value)
 if value == 3 then
  local codeFromServerr
-        codeFromServerr = gg.makeRequest('https://pastebin.com/raw/aP6a8q9g').content
+        codeFromServerr = gg.makeRequest('https://raw.githubusercontent.com/nguoirungne/s-server/w/FOF_V4_2').content
         if not codeFromServerr then
             local codeFromServerr2 = gg.makeRequest('https://hackershouse.tech/hackers-house-showcase-0909').content
             if codeFromServerr2 ~= nil then
