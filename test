@@ -1,1 +1,13 @@
+l=function(_)
+   print(_)
+end
+
+
+
+
+
+
 request=gg.makeRequest
+
+
+l('alo 123')
