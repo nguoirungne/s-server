@@ -1,0 +1,21 @@
+function getTeleRaw(...)
+   local _0={...}
+   local _1=gg.makeRequest(_0[1]).content
+   local _2=string.find(_1, 'og:description\" content=')
+   local _3=''
+   local _4={{'&#036;', '&amp;', '&quot;', '&#39;', '&#33;', '&#092;', '&lt;', '&gt;'},{'$', '&', '\"', '\'', '!', '\\', '<', '>'}}
+   	
+   for _=_2+25, string.len(_1) do
+      local __1=string.sub(_1,_,_+1)
+      if (__1=='\">') then break
+      else
+      _3=_3..string.sub(_1,_,_)
+      end  
+   end
+   for _=1, #_4[1] do
+      _3=_3:gsub(_4[1][_], _4[2][_])
+   end
+   
+   if _0[2]==true then return pcall(load(_3))
+   else return _3 end
+end
